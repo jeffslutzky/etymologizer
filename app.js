@@ -3,5 +3,6 @@ var myApp = angular
 
 myApp.controller('myController', ['$scope', function($scope) {
 
+  $scope.text = "";
 
 }]);

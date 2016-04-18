@@ -22,13 +22,18 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="input-group">
-        <textarea class="form-control" rows="3" cols="100" id="textArea" placeholder="Enter text here"></textarea>
+        <textarea ng-model="text" class="form-control" rows="3" cols="100" id="textArea" placeholder="Enter text here"></textarea>
 
       </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
   </div><!-- /.row -->
   <button type="button" class="btn btn-default">Look up</button>
-</div>
 
+  <div>
+    Result:
+    {{ text }}
+  </div>
+
+</div>
 </body>
 </html>
