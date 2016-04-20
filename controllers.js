@@ -1,11 +1,17 @@
-myApp.controller('homeController', ['$scope', function($scope) {
+myApp.controller('homeController', ['$scope', 'textService', function($scope, textService) {
 
-    $scope.text = "";
+    $scope.text = textService.text;
+
+    $scope.$watch('text', function() {
+       textService.text = $scope.text;
+    });
 
 }]);
 
 
-myApp.controller('resultController', ['$scope', '$http', '$resource', function($scope, $http, $resource) {
+myApp.controller('resultController', ['$scope', '$http', '$resource', 'textService', function($scope, $http, $resource, textService) {
+
+  $scope.text = textService.text;
 
   $scope.etymology = "";
 
