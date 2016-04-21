@@ -6,7 +6,7 @@ myApp.service('textService', function(){
 
 
 myApp.service('etymologyService', function(){
-  self = this;
+
   this.findEtymology = function() {
     for (i = 0; i < entry.length; i++) {
       if (entry[i].et) {
@@ -14,4 +14,5 @@ myApp.service('etymologyService', function(){
       }
     };
   };
+
 });
