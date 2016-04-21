@@ -17,10 +17,8 @@
 
 <div>
   <h4>
-    {{ text }}
+    <div ng-repeat="entry in etymology">
+      {{ entry.word + ": " + entry.etymology }}
+    </div>
   </h4>
-  <h5>
-    origin:
-    {{ etymology }}
-  </h5>
 </div>

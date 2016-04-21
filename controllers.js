@@ -23,8 +23,9 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService
         // cycle through each word
         $.each(response.data, function() {
           if (this.entry_list.entry) {
+            var word = this.entry_list.entry[0] ? this.entry_list.entry[0].ew : this.entry_list.entry.ew;
             var word_etymology = this.entry_list.entry[0] ? this.entry_list.entry[0].et : this.entry_list.entry.et;
-            $scope.etymology.push(word_etymology);
+            $scope.etymology.push({"word": word, "etymology": word_etymology});
           };
         });
 
