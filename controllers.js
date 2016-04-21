@@ -17,7 +17,8 @@ myApp.controller('resultController', ['$scope', '$http', '$resource', 'textServi
      textService.text = $scope.text;
   });
 
-  $scope.etymology = "";
+  // $scope.etymology = "";
+  $scope.etymology = [];
 
   $scope.resourceURL = "http://localhost:3000/api/word";
 
@@ -28,15 +29,15 @@ myApp.controller('resultController', ['$scope', '$http', '$resource', 'textServi
       console.log(response);
 
 // cycle through each word
-  var word_array = [];
-  $.each(response.data, function() {
-    if (this.entry_list.entry) {
-      $scope.etymology = this.entry_list.entry[0] ? this.entry_list.entry[0].et : this.entry_list.entry.et;
-      // push into array
-  });
-
+    $.each(response.data, function() {
+      if (this.entry_list.entry) {
+        var word_etymology = this.entry_list.entry[0] ? this.entry_list.entry[0].et : this.entry_list.entry.et;
+        $scope.etymology.push(word_etymology);
+      }
+    });
+    debugger;
     console.log($scope.text + ": " + $scope.etymology);
-    }}, function error(response) {
+    }, function error(response) {
       console.log("Error");
     });
 
