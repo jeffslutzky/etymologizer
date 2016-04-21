@@ -1,5 +1,5 @@
 
-myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService', function($scope, $http, $resource, textService) {
+myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService', 'etymologyService', function($scope, $http, $resource, textService, etymologyService) {
 
   $scope.text = textService.text;
 
@@ -18,18 +18,22 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService
       params: {words: $scope.text}
     })
       .then(function success(response) {
-        console.log(response);
 
         // cycle through each word
         $.each(response.data, function() {
-          if (this.entry_list.entry) {
-            var word = this.entry_list.entry[0] ? this.entry_list.entry[0].ew : this.entry_list.entry.ew;
-            var word_etymology = this.entry_list.entry[0] ? this.entry_list.entry[0].et : this.entry_list.entry.et;
-            $scope.etymology.push({"word": word, "etymology": word_etymology});
+          if (this.entry_list.entry) { // if word exists
+            entry = this.entry_list.entry;
+            var word = entry[0] ? entry[0].ew : entry.ew;
+
+            if (entry[0]) {
+              $scope.wordEtymology = etymologyService.findEtymology();
+            } else {
+              $scope.wordEtymology = entry.et;
+            };
+
+            $scope.etymology.push({"word": word, "etymology": $scope.wordEtymology});
           };
         });
-
-        console.log($scope.etymology);
 
       }, function error(response) {
         console.log("Error");
