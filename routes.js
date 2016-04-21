@@ -7,9 +7,4 @@ myApp.config(function($routeProvider) {
     controller: 'homeController'
   })
 
-  .when('/result', {
-    templateUrl: 'pages/result.html',
-    controller: 'resultController'
-  })
-
 });

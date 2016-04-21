@@ -3,11 +3,24 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-
-      <textarea ng-model="text" class="form-control" rows="3" cols="100" id="textArea" placeholder="Enter text here"></textarea>
-
+<form ng-submit="click()">
+      <textarea
+      ng-model="text"
+      ng-model-options="{ updateOn: 'submit' }"
+      class="form-control" rows="3" cols="100" id="textArea" placeholder="Enter text here"></textarea>
+      <button class="btn btn-primary">Show etymology</button>
+</form>
     </div>
   </div>
 </div>
 
-<a href="#/result" ng-click="click()" class="btn btn-primary">Show etymology</a>
+
+<div>
+  <h4>
+    {{ text }}
+  </h4>
+  <h5>
+    origin:
+    {{ etymology }}
+  </h5>
+</div>
