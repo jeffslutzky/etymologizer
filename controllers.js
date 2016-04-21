@@ -10,7 +10,7 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService
 
   $scope.resourceURL = "http://localhost:3000/api/word";
 
-  $scope.click = function() {
+  $scope.showEtymology = function() {
 
     $scope.etymology = [];
 

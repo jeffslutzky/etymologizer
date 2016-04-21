@@ -1,3 +1,10 @@
 button {
   margin: 10px 0px;
 }
+
+.word {
+  float: left;
+  border: solid black 2px;
+  padding: 3px;
+  margin: 0px 2px;
+}

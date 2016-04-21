@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-<form ng-submit="click()">
+<form ng-submit="showEtymology()">
       <textarea
       ng-model="text"
       ng-model-options="{ updateOn: 'submit' }"
@@ -18,7 +18,7 @@
 <div>
   <h4>
     <div ng-repeat="entry in etymology">
-      <p>{{ entry.word + ": " + entry.etymology }}</p>
+      <div class="word">{{ entry.word }}</div>
     </div>
   </h4>
 </div>
