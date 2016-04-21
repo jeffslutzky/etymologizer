@@ -26,15 +26,16 @@ myApp.controller('resultController', ['$scope', '$http', '$resource', 'textServi
   })
     .then(function success(response) {
       console.log(response);
+
 // cycle through each word
-  for (var word in response.data) {
-    debugger;
-  };
+  var word_array = [];
+  $.each(response.data, function() {
+    if (this.entry_list.entry) {
+      $scope.etymology = this.entry_list.entry[0] ? this.entry_list.entry[0].et : this.entry_list.entry.et;
+      // push into array
+  });
 
-      if (response.data.entry_list.entry) {
-        $scope.etymology = response.data.entry_list.entry[0] ? response.data.entry_list.entry[0].et : response.data.entry_list.entry.et;
-
-      console.log($scope.text + ": " + $scope.etymology);
+    console.log($scope.text + ": " + $scope.etymology);
     }}, function error(response) {
       console.log("Error");
     });
