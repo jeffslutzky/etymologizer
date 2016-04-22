@@ -1,11 +1,6 @@
+myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologyService', function($scope, $http, $resource, etymologyService) {
 
-myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService', 'etymologyService', function($scope, $http, $resource, textService, etymologyService) {
-
-  $scope.text = textService.text;
-
-  $scope.$watch('text', function() {
-     textService.text = $scope.text;
-  });
+  $scope.text = "";
 
   $scope.resourceURL = "http://localhost:3000/api/word";
 
@@ -24,6 +19,7 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'textService
           wordEtymology = etymologyService.findEtymology(this);
           $scope.etymology.push({"word": word, "etymology": wordEtymology});
         });
+        debugger;
       }, function error(response) {
         console.log("Error");
       });

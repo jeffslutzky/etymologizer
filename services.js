@@ -1,10 +1,3 @@
-myApp.service('textService', function(){
-
-  this.text = "";
-
-});
-
-
 myApp.service('etymologyService', function(){
 
   this.findEtymology = function(word) {
