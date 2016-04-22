@@ -1,4 +1,4 @@
-myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologyService', function($scope, $http, $resource, etymologyService) {
+myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologyService', 'colorCodeService', function($scope, $http, $resource, etymologyService, colorCodeService) {
 
   $scope.text = "";
 
@@ -15,11 +15,15 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
       .then(function success(response) {
         // cycle through each word
         $.each(response.data, function() {
-          word = $scope.words.shift()
-          wordEtymology = etymologyService.findEtymology(this);
-          $scope.etymology.push({"word": word, "etymology": wordEtymology});
+          word = $scope.words.shift();
+          etymology = etymologyService.findEtymology(this);
+
+          // find language of origin for color-coding
+          colorCodeService.getColor(etymology);
+
+          $scope.etymologies.push({"word": word, "etymology": etymology});
         });
-        debugger;
+
       }, function error(response) {
         console.log("Error");
       });

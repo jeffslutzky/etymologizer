@@ -21,3 +21,17 @@ myApp.service('etymologyService', function(){
   };
 
 });
+
+
+
+myApp.service('colorCodeService', function() {
+
+  this.getColor = function(etymology) {
+    debugger;
+
+
+
+
+  };
+
+});
