@@ -7,21 +7,20 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
   $scope.showEtymology = function() {
 
     $scope.words = $scope.text.split(" ");
-    $scope.etymology = [];
+    $scope.etymologies = [];
 
     $http.get($scope.resourceURL, {
       params: {words: $scope.text}
     })
       .then(function success(response) {
+
         // cycle through each word
         $.each(response.data, function() {
           word = $scope.words.shift();
           etymology = etymologyService.findEtymology(this);
-
-          // find language of origin for color-coding
-          colorCodeService.getColor(etymology);
-
-          $scope.etymologies.push({"word": word, "etymology": etymology});
+          color = colorCodeService.getColor(etymology);
+          debugger;
+          $scope.etymologies.push({"word": word, "etymology": etymology, "color": color });
         });
 
       }, function error(response) {

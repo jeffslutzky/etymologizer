@@ -27,10 +27,16 @@ myApp.service('etymologyService', function(){
 myApp.service('colorCodeService', function() {
 
   this.getColor = function(etymology) {
-    debugger;
 
-
-
+    if (etymology.includes("Greek")) {
+      return "Greek";
+    };
+    if (etymology.includes("Latin")) {
+      return "Latin";
+    };
+    if (etymology.includes("Old English")) {
+      return "Old English";
+    };
 
   };
 
