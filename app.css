@@ -4,7 +4,39 @@ button {
 
 .word {
   float: left;
-  border: solid black 2px;
   padding: 3px;
-  margin: 0px 2px;
+  margin: 0px 1.5px;
+}
+
+/*latin, greek, old english, french, old norse, japanese, chinese, other.... */
+
+.green {
+  border: solid #1fa141 2px;
+  background-color: #26ed5b
+}
+
+.pink {
+  border: solid #a35898 2px;
+  background-color: #ffadf3
+}
+
+.blue {
+  border: solid #5785ab 2px;
+  background-color: #80c5ff
+}
+
+.yellow {
+
+}
+
+.orange {
+
+}
+
+.gray {
+
+}
+
+.tan {
+
 }
