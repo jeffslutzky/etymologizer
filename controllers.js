@@ -4,7 +4,7 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
 
   $scope.resourceURL = "http://localhost:3000/api/word";
 
-  $scope.showEtymology = function() {
+  $scope.getEtymologies = function() {
 
     $scope.words = $scope.text.split(" ");
     $scope.etymologies = [];
@@ -17,8 +17,8 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
         // cycle through each word
         $.each(response.data, function() {
           word = $scope.words.shift();
-          etymology = etymologyService.findEtymology(this);
-          language = originLanguageService.getLanguage(etymology);
+          this.entry_list.entry ? etymology = etymologyService.findEtymology(this) : etymology = null;
+          etymology ? language = originLanguageService.getLanguage(etymology) : language = null;
 
           $scope.etymologies.push({"word": word, "etymology": etymology, "language": language });
         });
@@ -27,5 +27,13 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
         console.log("Error");
       });
     };
+
+  $scope.showEtymology = function(item) {
+    item.popup = true;
+  }
+
+  $scope.hideEtymology = function(item) {
+    item.popup = false;
+  }
 
 }]);

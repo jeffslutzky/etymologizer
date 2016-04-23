@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-<form ng-submit="showEtymology()">
+<form ng-submit="getEtymologies()">
       <textarea
       ng-model="text"
       ng-model-options="{ updateOn: 'submit' }"
@@ -18,13 +18,23 @@
 <div>
   <h4>
     <div ng-repeat="entry in etymologies">
-      <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }">{{ entry.word }}</div>
+
+      <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
+        {{ entry.word }}
+      </div>
+
+      <div ng-show="entry.popup">
+        {{ entry.etymology }}
+      </div>
+
     </div>
 
     <!-- <div class="word green">test</div>
     <div class="word pink">frog</div>
     <div class="word blue">out</div> -->
 
-
   </h4>
+
+
+
 </div>
