@@ -24,9 +24,9 @@ myApp.service('etymologyService', function(){
 
 
 
-myApp.service('colorCodeService', function() {
+myApp.service('originLanguageService', function() {
 
-  this.getColor = function(etymology) {
+  this.getLanguage = function(etymology) {
 
     if (etymology.includes("Greek")) {
       return "Greek";
