@@ -10,6 +10,7 @@ myApp.service('etymologyService', function(){
   };
 
   this.findCorrectSubEntry = function() {
+
     for (i = 0; i < entry.length; i++) {
       if (entry[i].et && typeof entry[i].et === "string") {
         return entry[i].et;
@@ -33,14 +34,14 @@ myApp.service('originLanguageService', function() {
 
     /*latin, greek, old english, french, old norse, japanese, chinese, other.... */
 
-    if (etymology.includes("Greek")) {
-      return "blue";
-    };
-    if (etymology.includes("Latin")) {
-      return "green";
-    };
     if (etymology.includes("Old English")) {
+      return "green";
+    } else if (etymology.includes("Latin")) {
+      return "blue";
+    } else if (etymology.includes("Greek")) {
       return "pink";
+    } else {
+      return "yellow";
     };
 
   };

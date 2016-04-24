@@ -33,23 +33,25 @@ button {
 .green {
   padding: 3px;
   border: solid #1fa141 2px;
-  background-color: #26ed5b
+  background-color: #26ed5b;
 }
 
 .pink {
   padding: 3px;
   border: solid #a35898 2px;
-  background-color: #ffadf3
+  background-color: #ffadf3;
 }
 
 .blue {
   padding: 3px;
   border: solid #5785ab 2px;
-  background-color: #80c5ff
+  background-color: #80c5ff;
 }
 
 .yellow {
-
+  padding: 3px;
+  border: solid #9da300 2px;
+  background-color: #f6ff00;
 }
 
 .orange {
