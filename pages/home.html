@@ -1,5 +1,6 @@
 <h4>Show the etymology of a word, or of a series of words!</h4>
 <h5>Enter one or more words, separated by spaces, without punctuation.</h5>
+<h5>(Results come from the <a href="http://www.dictionaryapi.com/">Merriam-Webster Dictionary API</a>.)</h5>
 
 <div class="key">
   <h5 class="word">
@@ -22,7 +23,7 @@
 </div>
 
 <div class="display-words">
-  <!-- <h5>Mouse over a word below to see its full etymology.</h5> -->
+  <h5 ng-show="etymologies">Mouse over a word below to see its full etymology.</h5>
 
   <h4>
     <span ng-repeat="entry in etymologies">

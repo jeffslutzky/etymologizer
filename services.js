@@ -37,6 +37,8 @@ myApp.service('originLanguageService', function() {
       return "latin";
     } else if (etymology.includes("Greek")) {
       return "greek";
+    } else if (etymology === "null") {
+      return;
     } else {
       return "other";
     };

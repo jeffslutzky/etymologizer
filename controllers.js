@@ -18,8 +18,11 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
         $.each(response.data, function() {
           word = $scope.words.shift();
           this.entry_list.entry ? etymology = etymologyService.findEtymology(this) : etymology = null;
-          etymology ? etymology = etymologyService.getValidHTML(etymology) : etymology = null;
+          etymology ? etymology = etymologyService.getValidHTML(etymology) : etymology = "null";
           etymology ? color = originLanguageService.getColor(etymology) : color = null;
+          if (etymology === "null") {
+            etymology = "<em>no etymology provided</em>";
+          };
           $scope.etymologies.push({"word": word, "etymology": etymology, "color": color });
         });
 
