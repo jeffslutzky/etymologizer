@@ -19,7 +19,7 @@ myApp.service('etymologyService', function(){
 
   this.getValidHTML = function(etymology) {
     etymology = etymology.replace(/<it>/g , "<em>").replace(/<\/\it>/g , "</em>");
-    etymology = etymology.replace(/<ma>/g , "(more at: ").replace(/<\/\ma>/g , ")");
+    etymology = etymology.replace(/<ma>/g , " (more at <em>").replace(/<\/\ma>/g , "</em>)");
     return etymology;
   };
 
