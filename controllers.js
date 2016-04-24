@@ -37,10 +37,3 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
   }
 
 }]);
-
-
-myApp.filter('unsafe', function($sce) {
-    return function(val) {
-        return $sce.trustAsHtml(val);
-    };
-});
