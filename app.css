@@ -1,26 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+
 button {
   margin: 10px 0px;
 }
 
+.display-words {
+  width: 50%;
+
+}
+
+.display-etymology {
+  width: 50%;
+  float: right;
+}
+
 .word {
-  float: left;
-  padding: 3px;
-  margin: 0px 1.5px;
+  margin: 2px 0px;
+  display: inline-block;
 }
 
 /*latin, greek, old english, french, old norse, japanese, chinese, other.... */
 
 .green {
+  padding: 3px;
   border: solid #1fa141 2px;
   background-color: #26ed5b
 }
 
 .pink {
+  padding: 3px;
   border: solid #a35898 2px;
   background-color: #ffadf3
 }
 
 .blue {
+  padding: 3px;
   border: solid #5785ab 2px;
   background-color: #80c5ff
 }

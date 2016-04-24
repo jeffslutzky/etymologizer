@@ -29,11 +29,11 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
     };
 
   $scope.showEtymology = function(item) {
-    item.popup = true;
+    item.display = true;
   }
 
   $scope.hideEtymology = function(item) {
-    item.popup = false;
+    item.display = false;
   }
 
 }]);

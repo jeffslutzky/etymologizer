@@ -15,19 +15,17 @@
 </div>
 
 
-<div>
+<div class="display-words">
+
   <h4>
-    <div ng-repeat="entry in etymologies">
+
+    <span ng-repeat="entry in etymologies">
 
       <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
         {{ entry.word }}
       </div>
 
-      <div ng-show="entry.popup" data-toggle="tooltip" data-placement="bottom" onmouseenter="$(this).tooltip('show')" title="Tooltip on top">
-        {{ entry.etymology }}
-      </div>
-
-    </div>
+    </span>
 
     <!-- <div class="word green">test</div>
     <div class="word pink">frog</div>
@@ -35,6 +33,13 @@
 
   </h4>
 
+</div>
 
+
+<div ng-repeat="entry in etymologies">
+
+  <div class="display-etymology" ng-show="entry.display">
+    {{ entry.etymology }}
+  </div>
 
 </div>
