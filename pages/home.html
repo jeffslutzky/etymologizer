@@ -23,7 +23,7 @@
         {{ entry.word }}
       </div>
 
-      <div ng-show="entry.popup">
+      <div ng-show="entry.popup" data-toggle="tooltip" data-placement="bottom" onmouseenter="$(this).tooltip('show')" title="Tooltip on top">
         {{ entry.etymology }}
       </div>
 
