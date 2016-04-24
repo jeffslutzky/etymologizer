@@ -26,16 +26,18 @@ myApp.service('etymologyService', function(){
 
 myApp.service('originLanguageService', function() {
 
-  this.getLanguage = function(etymology) {
+  this.getColor = function(etymology) {
+
+    /*latin, greek, old english, french, old norse, japanese, chinese, other.... */
 
     if (etymology.includes("Greek")) {
-      return "Greek";
+      return "blue";
     };
     if (etymology.includes("Latin")) {
-      return "Latin";
+      return "green";
     };
     if (etymology.includes("Old English")) {
-      return "Old English";
+      return "pink";
     };
 
   };

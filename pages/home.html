@@ -21,9 +21,12 @@
 
     <span ng-repeat="entry in etymologies">
 
-      <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
+      <!-- <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)"> -->
+      <span class="word">
+      <div ng-class="entry.color" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
         {{ entry.word }}
       </div>
+    </span>
 
     </span>
 
