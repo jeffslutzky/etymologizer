@@ -24,6 +24,10 @@ button {
   display: inline-block;
 }
 
+.green:hover, .pink:hover, .blue:hover, .yellow:hover, orange:hover, gray:hover, tan:hover {
+  border-color: black;
+}
+
 /*latin, greek, old english, french, old norse, japanese, chinese, other.... */
 
 .green {
