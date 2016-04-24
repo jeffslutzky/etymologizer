@@ -1,15 +1,12 @@
 myApp.service('etymologyService', function(){
 
   this.findEtymology = function(word) {
-
-    // if (word.entry_list.entry) { // if word is a real word
       entry = word.entry_list.entry;
       if (entry.length) {
         return this.findCorrectSubEntry();
       } else {
         return entry.et;
       };
-    // };
   };
 
   this.findCorrectSubEntry = function() {
@@ -18,6 +15,12 @@ myApp.service('etymologyService', function(){
         return entry[i].et;
       };
     };
+  };
+
+  this.getValidHTML = function(etymology) {
+    etymology = etymology.replace(/<it>/g , "<em>").replace(/<\/\it>/g , "</em>");
+    etymology = etymology.replace(/<ma>/g , "(more at: ").replace(/<\/\ma>/g , ")");
+    return etymology;
   };
 
 });

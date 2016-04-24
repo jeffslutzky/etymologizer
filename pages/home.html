@@ -16,17 +16,15 @@
 
 
 <div class="display-words">
-
   <h4>
 
     <span ng-repeat="entry in etymologies">
 
-      <!-- <div class="word" ng-class="{ 'green' : entry.language === 'Latin' }" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)"> -->
       <span class="word">
-      <div ng-class="entry.color" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
-        {{ entry.word }}
-      </div>
-    </span>
+        <div ng-class="entry.color" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
+          {{ entry.word }}
+        </div>
+      </span>
 
     </span>
 
@@ -35,14 +33,16 @@
     <div class="word blue">out</div> -->
 
   </h4>
-
 </div>
 
 
 <div ng-repeat="entry in etymologies">
 
   <div class="display-etymology" ng-show="entry.display">
-    {{ entry.etymology }}
+
+    <!-- {{ entry.etymology }} -->
+    <div ng-bind-html="entry.etymology | unsafe"></div>
+
   </div>
 
 </div>

@@ -18,8 +18,8 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
         $.each(response.data, function() {
           word = $scope.words.shift();
           this.entry_list.entry ? etymology = etymologyService.findEtymology(this) : etymology = null;
+          etymology ? etymology = etymologyService.getValidHTML(etymology) : etymology = null;
           etymology ? color = originLanguageService.getColor(etymology) : color = null;
-
           $scope.etymologies.push({"word": word, "etymology": etymology, "color": color });
         });
 
@@ -37,3 +37,10 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
   }
 
 }]);
+
+
+myApp.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+});
