@@ -31,19 +31,15 @@ myApp.service('etymologyService', function(){
 myApp.service('originLanguageService', function() {
 
   this.getColor = function(etymology) {
-
-    /*latin, greek, old english, french, old norse, japanese, chinese, other.... */
-
     if (etymology.includes("Old English")) {
-      return "green";
+      return "old-english";
     } else if (etymology.includes("Latin")) {
-      return "blue";
+      return "latin";
     } else if (etymology.includes("Greek")) {
-      return "pink";
+      return "greek";
     } else {
-      return "yellow";
+      return "other";
     };
-
   };
 
 });

@@ -2,6 +2,15 @@ html {
   box-sizing: border-box;
 }
 
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.key {
+  margin: 20px 5px;
+}
+
 button {
   margin: 10px 0px;
 }
@@ -24,44 +33,42 @@ button {
   display: inline-block;
 }
 
-.green:hover, .pink:hover, .blue:hover, .yellow:hover, orange:hover, gray:hover, tan:hover {
+.greek:hover, .old-english:hover, .latin:hover, .other:hover {
   border-color: black;
 }
 
-/*latin, greek, old english, french, old norse, japanese, chinese, other.... */
-
-.green {
+/*green*/
+.greek {
   padding: 3px;
-  border: solid #1fa141 2px;
   background-color: #26ed5b;
+  border: solid #1fa141 2px;
 }
 
-.pink {
+/*pink*/
+.old-english {
   padding: 3px;
-  border: solid #a35898 2px;
   background-color: #ffadf3;
+  border: solid #a35898 2px;
 }
 
-.blue {
+/*blue*/
+.latin {
   padding: 3px;
-  border: solid #5785ab 2px;
   background-color: #80c5ff;
+  border: solid #5785ab 2px;
 }
 
-.yellow {
+/*yellow*/
+.other {
   padding: 3px;
-  border: solid #9da300 2px;
   background-color: #f6ff00;
+  border: solid #9da300 2px;
 }
 
-.orange {
-
-}
-
-.gray {
-
-}
-
-.tan {
-
+/*red*/
+.red {
+  padding: 3px;
+  background-color: #ff4242;
+  border: solid #cf3434 2px;
+  color: white;
 }
