@@ -2,7 +2,7 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
 
   $scope.inputText = "";
 
-  $scope.resourceURL = "http://localhost:3000/api/word";
+  $scope.resourceURL = "https://etymologizer-api.herokuapp.com/api/word";
 
   $scope.getEtymologies = function() {
 
