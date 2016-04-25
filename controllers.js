@@ -6,11 +6,11 @@ myApp.controller('homeController', ['$scope', '$http', '$resource', 'etymologySe
 
   $scope.getEtymologies = function() {
 
-    $scope.words = $scope.text.split(" ");
+    $scope.words = $scope.text.replace("-", " ").split(" ");
     $scope.etymologies = [];
 
     $http.get($scope.resourceURL, {
-      params: {words: $scope.text}
+      params: {words: $scope.text.replace("-", " ")}
     })
       .then(function success(response) {
 
