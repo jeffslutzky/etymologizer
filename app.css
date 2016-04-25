@@ -2,6 +2,23 @@ html {
   box-sizing: border-box;
 }
 
+.navbar-inverse {
+  background-color: #273670;
+  border-color: #273670;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #273670;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #2477BF;
+}
+
 .container {
   margin-left: 20px;
   margin-right: 20px;
@@ -18,11 +35,13 @@ button {
 .display-words {
   width: 50%;
   float: left;
+  padding-right: 5px;
 }
 
 .display-etymology {
   width: 50%;
   float: right;
+  margin-top: 20px;
   padding: 10px;
   font-size: 16px;
   background-color: beige;

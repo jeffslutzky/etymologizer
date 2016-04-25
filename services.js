@@ -27,10 +27,9 @@ myApp.service('etymologyService', function(){
 });
 
 
-
 myApp.service('originLanguageService', function() {
 
-  this.getColor = function(etymology) {
+  this.getLanguage = function(etymology) {
     if (etymology.includes("Old English")) {
       return "old-english";
     } else if (etymology.includes("Latin")) {

@@ -1,6 +1,6 @@
-<h4>Show the etymology of a word, or of a series of words!</h4>
-<h5>Enter one or more words, separated by spaces, without punctuation (hyphens are OK).</h5>
-<h5>(Results come from the <a href="http://www.dictionaryapi.com/">Merriam-Webster Dictionary API</a>.)</h5>
+<h5>Enter one or more words, separated by spaces.</h5>
+<h5>Punctuation will be stripped out, except for hyphens.</h5>
+<h5>Results come from the <a href="http://www.dictionaryapi.com/">Merriam-Webster Dictionary API</a>.</h5>
 
 <div class="key">
   <h5 class="word">
@@ -13,7 +13,7 @@
   <div class="col-lg-6">
     <div class="input-group">
       <form ng-submit="getEtymologies()">
-            <textarea ng-model="text" ng-model-options="{ updateOn: 'submit' }" class="form-control" rows="3" cols="50" id="textArea" placeholder="Enter text here"></textarea>
+            <textarea ng-model="inputText" ng-model-options="{ updateOn: 'submit' }" class="form-control" rows="3" cols="50" id="textArea" placeholder="Enter text here"></textarea>
             <button class="btn btn-primary">
               Show etymology
             </button>
@@ -25,10 +25,14 @@
 <div class="display-words">
   <h5 ng-show="etymologies">Mouse over a word below to see its full etymology.</h5>
 
+  <div class="spinner" ng-show="loading">
+    <img src="images/spinner.gif" alt="Loading...">
+  </div>
+
   <h4>
     <span ng-repeat="entry in etymologies">
       <span class="word">
-        <div ng-class="entry.color" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
+        <div ng-class="entry.language" ng-mouseover="showEtymology(entry)" ng-mouseout="hideEtymology(entry)">
           {{ entry.word }}
         </div>
       </span>
